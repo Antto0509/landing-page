@@ -1,9 +1,19 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { SectionReveal } from "./SectionReveal";
+
 export default function HeroSection({ nameProduct }: { nameProduct: string }) {
   return (
-    <section id="hero" className="relative overflow-hidden border-b border-slate-800 bg-linear-to-b from-slate-950 via-slate-950 to-slate-900">
+    <section
+      id="hero"
+      className="relative overflow-hidden border-b border-slate-800 bg-linear-to-b from-slate-950 via-slate-950 to-slate-900"
+    >
       <div className="pointer-events-none absolute inset-0 opacity-40 blur-3xl" />
+
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 py-16 sm:py-20 lg:flex-row lg:py-24">
-        <div className="flex-1 space-y-6 text-center lg:text-left">
+        {/* Colonne gauche : badge, titre, CTA */}
+        <SectionReveal className="flex-1 space-y-6 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1 text-xs font-medium text-slate-300">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
             Conçu par un freelance, pour les freelances
@@ -19,32 +29,55 @@ export default function HeroSection({ nameProduct }: { nameProduct: string }) {
             </h1>
             <p className="text-balance text-sm text-slate-300 sm:text-base">
               {nameProduct} centralise vos clients, factures et paiements dans un
-              seul outil simple, clair et taillé pour les indépendants
-              français.
+              seul outil simple, clair et taillé pour les indépendants français.
             </p>
           </div>
 
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-            <button className="inline-flex h-11 items-center justify-center rounded-full bg-emerald-500 px-6 text-sm font-medium text-slate-950 shadow-md shadow-emerald-500/30 transition hover:bg-emerald-400">
+            <motion.button
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex h-11 items-center justify-center rounded-full bg-emerald-500 px-6 text-sm font-medium text-slate-950 shadow-md shadow-emerald-500/30 transition hover:bg-emerald-400"
+            >
               Créer mon compte gratuit
-            </button>
-            <button className="inline-flex h-11 items-center justify-center rounded-full border border-slate-600 bg-slate-900/60 px-6 text-sm font-medium text-slate-100 transition hover:border-slate-400">
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex h-11 items-center justify-center rounded-full border border-slate-600 bg-slate-900/60 px-6 text-sm font-medium text-slate-100 transition hover:border-slate-400"
+            >
               Voir la démo
-            </button>
+            </motion.button>
           </div>
 
           <p className="text-xs text-slate-400">
             Pas de carte bancaire • Annulable en 1 clic • Hébergé en Europe
           </p>
-        </div>
+        </SectionReveal>
 
-        <div className="mt-6 flex-1 lg:mt-0">
-          <div className="mx-auto w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900/80 p-4 shadow-2xl shadow-emerald-500/10">
+        {/* Colonne droite : carte facture + glow */}
+        <SectionReveal delay={0.1} className="mt-6 flex-1 lg:mt-0">
+          <motion.div
+            className="mx-auto w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900/80 p-4 shadow-2xl"
+            animate={{
+              boxShadow: [
+                "0 0 0 0 rgba(16,185,129,0.0)",
+                "0 0 40px 0 rgba(16,185,129,0.35)",
+                "0 0 0 0 rgba(16,185,129,0.0)",
+              ],
+              y: [0, -4, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+            }}
+          >
             <div className="mb-3 flex items-center justify-between">
               <div>
-                <p className="text-xs font-medium text-slate-300">
-                  Nouvelle facture
-                </p>
+                <p className="text-xs font-medium text-slate-300">Nouvelle facture</p>
                 <p className="text-[11px] text-slate-400">
                   3 champs, 30 secondes, c&apos;est parti.
                 </p>
@@ -56,9 +89,7 @@ export default function HeroSection({ nameProduct }: { nameProduct: string }) {
 
             <div className="space-y-3 text-xs">
               <div className="space-y-1">
-                <label className="block text-[11px] text-slate-400">
-                  Client
-                </label>
+                <label className="block text-[11px] text-slate-400">Client</label>
                 <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-900 px-3 py-2">
                   <span className="text-slate-100">Studio Horizon</span>
                   <span className="text-[10px] text-slate-500">#CLI-004</span>
@@ -66,9 +97,7 @@ export default function HeroSection({ nameProduct }: { nameProduct: string }) {
               </div>
 
               <div className="space-y-1">
-                <label className="block text-[11px] text-slate-400">
-                  Intitulé
-                </label>
+                <label className="block text-[11px] text-slate-400">Intitulé</label>
                 <input
                   className="h-8 w-full rounded-lg border border-slate-700 bg-slate-900 px-3 text-xs text-slate-100 outline-none placeholder:text-slate-500"
                   placeholder="Création de site vitrine"
@@ -77,23 +106,17 @@ export default function HeroSection({ nameProduct }: { nameProduct: string }) {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="block text-[11px] text-slate-400">
-                    Montant HT
-                  </label>
+                  <label className="block text-[11px] text-slate-400">Montant HT</label>
                   <input
                     className="h-8 w-full rounded-lg border border-slate-700 bg-slate-900 px-3 text-xs text-slate-100 outline-none placeholder:text-slate-500"
                     placeholder="1 200,00 €"
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="block text-[11px] text-slate-400">
-                    TVA
-                  </label>
+                  <label className="block text-[11px] text-slate-400">TVA</label>
                   <div className="flex h-8 items-center justify-between rounded-lg border border-slate-700 bg-slate-900 px-3 text-xs">
                     <span className="text-slate-100">20 %</span>
-                    <span className="text-[10px] text-slate-500">
-                      240,00 €
-                    </span>
+                    <span className="text-[10px] text-slate-500">240,00 €</span>
                   </div>
                 </div>
               </div>
@@ -101,23 +124,26 @@ export default function HeroSection({ nameProduct }: { nameProduct: string }) {
               <div className="mt-4 flex items-center justify-between rounded-xl border border-slate-700 bg-slate-900 px-3 py-2.5">
                 <div>
                   <p className="text-[11px] text-slate-400">Total TTC</p>
-                  <p className="text-sm font-semibold text-slate-50">
-                    1 440,00 €
-                  </p>
+                  <p className="text-sm font-semibold text-slate-50">1 440,00 €</p>
                 </div>
-                <button className="h-8 rounded-full bg-emerald-500 px-4 text-[11px] font-semibold text-slate-950 hover:bg-emerald-400">
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="h-8 rounded-full bg-emerald-500 px-4 text-[11px] font-semibold text-slate-950 hover:bg-emerald-400"
+                >
                   Générer la facture
-                </button>
+                </motion.button>
               </div>
             </div>
-          </div>
+          </motion.div>
+
           <p className="mt-3 text-center text-[11px] text-slate-400">
             Interface fictive à titre d&apos;exemple. L&apos;objectif :{" "}
             <span className="font-medium text-slate-200">
               aller à l&apos;essentiel.
             </span>
           </p>
-        </div>
+        </SectionReveal>
       </div>
     </section>
   );

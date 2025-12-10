@@ -1,3 +1,5 @@
+"use client";
+
 import * as Landing from "@/components/landing";
 
 const NameProduct = "Fac&Co";
