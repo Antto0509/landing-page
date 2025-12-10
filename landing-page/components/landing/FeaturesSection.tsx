@@ -17,7 +17,7 @@ const features = [
   {
     title: "Multi-activités",
     description:
-      "Gère plusieurs structures ou activités depuis un seul compte (prévu dans la roadmap).",
+      "Gère plusieurs structures ou activités depuis un seul compte.",
   },
   {
     title: "Pensé pour la France",
