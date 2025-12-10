@@ -32,7 +32,7 @@ export default function HowItWorksSection() {
     >
       <div className="mx-auto max-w-6xl px-4 py-16">
         <SectionReveal>
-          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-10 space-y-3 text-center">
             <div className="space-y-2">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
                 Comment ça marche ?

@@ -41,7 +41,7 @@ export default function FeaturesSection() {
     <section id="features" className="border-b border-slate-800 bg-slate-950">
       <div className="mx-auto max-w-6xl px-4 py-16">
         <SectionReveal>
-          <div className="max-w-2xl space-y-3">
+          <div className="mb-10 space-y-3 text-center">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
               Les fonctionnalités dont tu as vraiment besoin. Le reste viendra en
               temps voulu.

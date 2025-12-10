@@ -14,6 +14,7 @@ export default function LandingPage() {
       <Landing.HowItWorksSection />
       <Landing.DemoSection nameProduct={NameProduct} />
       <Landing.FeaturesSection />
+      <Landing.TestimonialsSection />
       <Landing.PricingSection />
       <Landing.FAQSection />
       <Landing.FooterSection nameProduct={NameProduct} />
