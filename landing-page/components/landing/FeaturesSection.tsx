@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionReveal } from "./SectionReveal";
+import { Section } from "./Section";
 
 const features = [
   {
@@ -38,40 +39,30 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="border-b border-slate-800 bg-slate-950">
-      <div className="mx-auto max-w-6xl px-4 py-16">
-        <SectionReveal>
-          <div className="mb-10 space-y-3 text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
-              Les fonctionnalités dont tu as vraiment besoin. Le reste viendra en
-              temps voulu.
-            </h2>
-            <p className="text-sm text-slate-300">
-              L&apos;objectif n&apos;est pas d&apos;avoir 100 boutons, mais de
-              couvrir 100 % de ton quotidien de freelance sans te perdre.
-            </p>
-          </div>
-        </SectionReveal>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {features.map((feature, index) => (
-            <SectionReveal key={feature.title} delay={0.1 + index * 0.05}>
-              <motion.div
-                whileHover={{ y: -4, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="flex flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5"
-              >
-                <h3 className="text-sm font-semibold text-slate-50">
-                  {feature.title}
-                </h3>
-                <p className="text-xs leading-relaxed text-slate-300">
-                  {feature.description}
-                </p>
-              </motion.div>
-            </SectionReveal>
-          ))}
-        </div>
+    <Section 
+      id="features" 
+      name="Fonctionnalités"
+      title="Les fonctionnalités dont tu as vraiment besoin. Le reste viendra en temps voulu."
+      subtitle="L'objectif n'est pas d'avoir 100 boutons, mais de couvrir 100 % de ton quotidien de freelance sans te perdre."
+    >
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {features.map((feature, index) => (
+          <SectionReveal key={feature.title} delay={0.1 + index * 0.05}>
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              className="flex flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5"
+            >
+              <h3 className="text-sm font-semibold text-slate-50">
+                {feature.title}
+              </h3>
+              <p className="text-xs leading-relaxed text-slate-300">
+                {feature.description}
+              </p>
+            </motion.div>
+          </SectionReveal>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

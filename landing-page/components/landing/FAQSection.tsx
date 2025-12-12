@@ -1,6 +1,9 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
+import { Section } from "./Section";
 import { SectionReveal } from "./SectionReveal";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -26,41 +29,54 @@ const faqs = [
 ];
 
 export default function FAQSection() {
-  return (
-    <section id="faq" className="border-b border-slate-800 bg-slate-950">
-      <div className="mx-auto max-w-4xl px-4 py-16">
-        <SectionReveal>
-          <div className="mb-8 space-y-3 text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
-              Questions fréquentes
-            </h2>
-            <p className="text-sm text-slate-300">
-              Si tu as encore un doute, tu n&apos;es probablement pas le seul.
-            </p>
-          </div>
-        </SectionReveal>
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-        <div className="space-y-3">
-          {faqs.map((faq, index) => (
+  return (
+    <Section
+      id="faq"
+      name="FAQ"
+      title="Questions fréquentes"
+      subtitle="Si tu hésites encore, c’est normal. Voilà les réponses."
+    >
+      <div className="mx-auto mt-8 max-w-2xl space-y-3">
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index;
+
+          return (
             <SectionReveal key={faq.question} delay={0.05 + index * 0.06}>
-              <details className="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-slate-50">
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                <button
+                  onClick={() =>
+                    setOpenIndex(isOpen ? null : index)
+                  }
+                  className="flex w-full items-center justify-between text-left text-sm font-medium text-slate-50"
+                >
                   <span>{faq.question}</span>
-                  <span className="ml-4 text-lg leading-none text-slate-500 group-open:hidden">
-                    +
+                  <span className="ml-4 text-lg text-slate-500">
+                    {isOpen ? "−" : "+"}
                   </span>
-                  <span className="ml-4 hidden text-lg leading-none text-slate-500 group-open:block">
-                    −
-                  </span>
-                </summary>
-                <p className="mt-3 text-xs leading-relaxed text-slate-300">
-                  {faq.answer}
-                </p>
-              </details>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="mt-3 text-xs leading-relaxed text-slate-300">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </SectionReveal>
-          ))}
-        </div>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionReveal } from "./SectionReveal";
+import { Section } from "./Section";
 
 const steps = [
   {
@@ -26,46 +27,33 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section
+    <Section
       id="how-it-works"
-      className="border-b border-slate-800 bg-slate-950"
+      name="Comment ça marche ?"
+      title="Trois étapes simples pour facturer en toute sérénité."
+      subtitle="Pas de tunnel compliqué. Trois étapes, et tu peux facturer."
     >
-      <div className="mx-auto max-w-6xl px-4 py-16">
-        <SectionReveal>
-          <div className="mb-10 space-y-3 text-center">
-            <div className="space-y-2">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
-                Comment ça marche ?
-              </h2>
-              <p className="text-sm text-slate-300">
-                Pas de tunnel compliqué. Trois étapes, et tu peux facturer.
+      <div className="grid gap-6 md:grid-cols-3">
+        {steps.map((step, index) => (
+          <SectionReveal key={step.step} delay={0.1 + index * 0.08}>
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              className="flex flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5"
+            >
+              <span className="text-xs font-semibold text-emerald-400">
+                Étape {step.step}
+              </span>
+              <h3 className="text-sm font-semibold text-slate-50">
+                {step.title}
+              </h3>
+              <p className="text-xs leading-relaxed text-slate-300">
+                {step.description}
               </p>
-            </div>
-          </div>
-        </SectionReveal>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          {steps.map((step, index) => (
-            <SectionReveal key={step.step} delay={0.1 + index * 0.08}>
-              <motion.div
-                whileHover={{ y: -4, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="flex flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5"
-              >
-                <span className="text-xs font-semibold text-emerald-400">
-                  Étape {step.step}
-                </span>
-                <h3 className="text-sm font-semibold text-slate-50">
-                  {step.title}
-                </h3>
-                <p className="text-xs leading-relaxed text-slate-300">
-                  {step.description}
-                </p>
-              </motion.div>
-            </SectionReveal>
-          ))}
-        </div>
+            </motion.div>
+          </SectionReveal>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
