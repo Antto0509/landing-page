@@ -1,24 +1,15 @@
+import { Section } from "./Section";
 import { SectionReveal } from "./SectionReveal";
 import { motion } from "framer-motion";
 
 export default function DemoSection({ nameProduct }: { nameProduct: string }) {
   return (
-    <section id="demo" className="border-b border-slate-800 bg-slate-950">
-      <div className="mx-auto max-w-6xl px-4 py-16">
-        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
-              Une interface pensée pour aller droit au but.
-            </h2>
-            <p className="text-sm text-slate-300">
-              Tout ce dont tu as besoin pour facturer proprement. Rien de plus.
-            </p>
-          </div>
-          <button className="inline-flex h-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900 px-4 text-xs font-medium text-slate-100 hover:border-slate-400">
-            Lancer la démo interactive
-          </button>
-        </div>
-
+    <Section 
+        id="demo"
+        name="Démo interactive"
+        title="Découvre l’interface en un coup d’œil."
+        subtitle={`${nameProduct} est conçu pour te faire gagner du temps et réduire les erreurs. Voici un aperçu fictif de ton futur tableau de bord.`}
+    >
         <SectionReveal>
             <motion.div
                 className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80"
@@ -133,11 +124,17 @@ export default function DemoSection({ nameProduct }: { nameProduct: string }) {
                 </div>
             </motion.div>
         </SectionReveal>
-        <p className="mt-3 text-[11px] text-slate-400">
-          L&apos;objectif : montrer en un regard que l&apos;outil est simple,
-          sérieux, et centré sur ton activité.
-        </p>
-      </div>
-    </section>
+        <div className="mt-6 text-center">
+            <p className="mt-3 text-[11px] text-slate-400 mb-4">
+                L&apos;objectif : montrer en un regard que l&apos;outil est simple,
+                sérieux, et centré sur ton activité.
+            </p>
+
+            <button className="inline-flex h-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900 px-4 text-xs font-medium text-slate-100 hover:border-slate-400">
+                Lancer la démo interactive
+            </button>
+        </div>
+        
+    </Section>
   );
 }
