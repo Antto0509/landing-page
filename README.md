@@ -1,148 +1,36 @@
-# 🚀 Landing Page Template — Next.js 16 + Tailwind CSS
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Template moderne et épuré pour créer rapidement une landing page de SaaS, produit, application ou service.
-Basé sur Next.js 16 (App Router) et Tailwind CSS, il inclut un hero section, features, pricing, FAQ et un CTA final.
-Parfait pour démarrer un projet ou montrer ce que tu sais faire côté front.
+## Getting Started
 
----
-
-## ✨ Fonctionnalités
-
-- ⚡ **Next.js 16** – App Router, performance et SEO intégrés
-- 🎨 **Tailwind CSS** – styles propres, responsive et faciles à modifier
-- 🧩 **Sections modulaires** :
-  - Hero
-  - Social proof
-  - Features (“Fonctionnalités”)
-  - How it works
-  - Pricing
-  - FAQ
-  - Final CTA
-  - Footer
-- 🔧 **Configuration centralisée** en haut du fichier (`PRODUCT_NAME`, tagline, items, pricing…)
-- 🧪 **Mockup dashboard intégré** pour illustrer un SaaS ou outil métier
-- ♻️ **Template réutilisable** : change juste le nom, les textes et les tableaux
-
----
-
-## 📦 Installation
+First, run the development server:
 
 ```bash
-git clone https://github.com/Antto0509/landing-page.git
-cd landing-page
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Le projet démarre sur http://localhost:3000
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 📁 Structure du projet
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```graphql
-landing-page/
-├── app/
-│   ├── page.tsx
-│   │   # Page principale de la landing page
-│   │   # Contient :
-│   │   #   - La configuration globale (nom du produit, tagline, CTA…)
-│   │   #   - Toutes les sections (Hero, Features, Pricing, FAQ…)
-│   │   #   - Les composants UI intégrés dans un même fichier pour simplicité
-│   │   #   Astuce : Tu peux séparer les sections dans /components si tu veux évoluer.
-│   └── globals.css
-│       # Styles globaux (si Tailwind injecte base / components / utilities ici)
-│
-├── public/
-│   └── favicon.ico
-│       # Icône affichée dans l’onglet du navigateur
-│
-├── tailwind.config.js
-│   # Configuration Tailwind CSS :
-│   #   - Palette de couleurs
-│   #   - Breakpoints
-│   #   - Plugins
-│   #   - Chemins de scan (./app/**/*)
-│
-├── postcss.config.js
-│   # Pipeline PostCSS utilisé par Next.js + Tailwind
-│
-├── tsconfig.json
-│   # Configuration TypeScript :
-│   #   - Paths alias
-│   #   - Strict mode
-│   #   - Options Next.js
-│
-└── README.md
-    # Documentation du projet, instructions, installation et personnalisation
-```
+## Learn More
 
-Tout est dans `app/page.tsx` = ultra simple à reprendre ou découper en composants.
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🔧 Configuration (hyper simple)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Tout se passe en haut de `app/page.tsx` :
+## Deploy on Vercel
 
-```tsx
-const PRODUCT_NAME = "NovaBoard";
-const TAGLINE = "Le cockpit clair pour piloter ton activité.";
-const HERO_SUBTITLE = "...";
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-const FEATURES = [...];
-const PRICING_PLANS = [...];
-const FAQ_ITEMS = [...];
-```
-
-Modifie ces objets → toute la page se met à jour.
-
----
-
-## 🛠️ Technologies utilisées
-
-- Next.js 16
-- Tailwind CSS
-- TypeScript
-
----
-
-## 📤 Déploiement
-
-### 🚀 Vercel (recommandé)
-
-1. Push ton repo sur GitHub
-2. Va sur https://vercel.com/new
-3. Import ton repo → Vercel détecte Next.js automatiquement
-
-Deploy instantané.
-
-### Ou via Docker (optionnel)
-```bash
-docker build -t landing-template .
-docker run -p 3000:3000 landing-template
-```
-
----
-
-## 🧪 Démo (à remplir)
-
-URL : https://…
-
-Aperçu : _(ajouter une capture ici)_
-
----
-
-## 🧩 Idées pour aller plus loin
-
-- Ajouter un système de layout global
-- Découper chaque section en composant dans components/landing/*
-- Ajouter une vraie API de contact (Brevo, Resend, Supabase…)
-- Ajouter un mode clair / sombre
-- Ajouter un CMS headless pour éditer le contenu
-
----
-
-## 📜 Licence
-
-MIT — utilisation libre, modifiable et commerciale autorisée.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
