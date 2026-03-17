@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 
 export default function HeaderSection({ nameProduct }: { nameProduct: string }) {
@@ -61,6 +60,11 @@ export default function HeaderSection({ nameProduct }: { nameProduct: string }) 
           </a>
           <ThemeToggle />
         </div>
+      </div>
+
+      {/* Template banner */}
+      <div className="w-full bg-(--accent-subtle) border-b border-(--ruby-accent)/20 py-1.5 text-center text-[11px] text-(--ruby-accent) font-medium tracking-wide">
+        Ceci est un <strong>template de démonstration</strong> — Method ELEVATE par Antoine Coutreel
       </div>
     </header>
   );

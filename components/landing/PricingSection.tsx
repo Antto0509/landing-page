@@ -13,7 +13,7 @@ const plans = [
     period: "sans engagement",
     highlight: false,
     description:
-      "Pour identifier précisément ce qui bloque votre conversion — avant de décider.",
+      "Pour identifier précisément ce qui bloque votre conversion avant de décider.",
     features: [
       "Analyse de votre page et de votre message actuel",
       "Identification des 3 freins principaux à la conversion",
@@ -102,7 +102,7 @@ export default function PricingSection() {
                   </ul>
                 </CardContent>
 
-                <CardFooter className="flex flex-col gap-1.5 p-6 pt-0">
+                <CardFooter className="flex flex-col gap-1.5 p-4">
                   <a
                     href="mailto:contact@clarity.fr"
                     className={`inline-flex w-full h-8 items-center justify-center rounded-full text-xs font-medium ${
@@ -127,7 +127,7 @@ export default function PricingSection() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-[11px] text-[var(--foreground-muted)]">
           {[
             "Livrable concret en 5 jours ouvrés",
-            "Résultat mesurable — ou on retravaille",
+            "Résultat mesurable ou on retravaille",
             "Processus clair, zéro réunion inutile",
           ].map((item) => (
             <span key={item} className="flex items-center gap-1.5">

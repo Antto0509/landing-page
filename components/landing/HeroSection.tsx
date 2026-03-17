@@ -49,7 +49,7 @@ export default function HeroSection({ nameProduct }: { nameProduct: string }) {
               <span className="bg-gradient-to-r from-ruby-400 to-ruby-600 bg-clip-text text-transparent">
                 source de leads B2B
               </span>{" "}
-              qualifiés — en 5 jours ouvrés.
+              qualifiés, en 5 jours ouvrés.
             </h1>
 
             <p className="text-balance text-sm text-[var(--foreground-muted)] sm:text-base">

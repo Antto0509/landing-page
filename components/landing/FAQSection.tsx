@@ -13,17 +13,17 @@ const faqs = [
   {
     question: "Est-ce que ça marche vraiment pour mon secteur ?",
     answer:
-      "La Method ELEVATE s'adapte à tout service B2B. Elle commence toujours par extraire le problème réel de vos prospects dans leurs mots exacts — pas dans le jargon de votre secteur. Conseil, SaaS, agence, coaching, finance : le mécanisme est identique. Ce qui change, c'est le contenu. Ce qui ne change pas, c'est la logique de conviction.",
+      "La Method ELEVATE s'adapte à tout service B2B. Elle commence toujours par extraire le problème réel de vos prospects dans leurs mots exact. Pas dans le jargon de votre secteur. Conseil, SaaS, agence, coaching, finance : le mécanisme est identique. Ce qui change, c'est le contenu. Ce qui ne change pas, c'est la logique de conviction.",
   },
   {
     question: "En quoi c'est différent d'un copywriter classique ?",
     answer:
-      "Un copywriter classique écrit à partir de ce que vous lui donnez. La Method ELEVATE commence par extraire ce que vos prospects pensent vraiment — par des interviews, des verbatims, des données internes. Chaque étape a un critère de validation objectif. Le headline est testé avant d'être livré. Ce n'est pas du copywriting intuitif, c'est un framework de conviction structuré.",
+      "Un copywriter classique écrit à partir de ce que vous lui donnez. La Method ELEVATE commence par extraire ce que vos prospects pensent vraiment (par des interviews, des verbatims, des données internes). Chaque étape a un critère de validation objectif. Le headline est testé avant d'être livré. Ce n'est pas du copywriting intuitif, c'est un framework de conviction structuré.",
   },
   {
-    question: "Je n'ai pas de témoignages structurés — est-ce un problème ?",
+    question: "Je n'ai pas de témoignages structurés, est-ce un problème ?",
     answer:
-      "Non. La preuve sociale existe presque toujours sous forme dispersée : emails de clients satisfaits, retours informels lors de rendez-vous, données internes sur les résultats obtenus. L'extraction et la reconstitution de cette preuve font partie intégrante de la méthode. Ce qui n'est pas formalisé n'est pas inexistant — il est juste à aller chercher.",
+      "Non. La preuve sociale existe presque toujours sous forme dispersée : emails de clients satisfaits, retours informels lors de rendez-vous, données internes sur les résultats obtenus. L'extraction et la reconstitution de cette preuve font partie intégrante de la méthode. Ce qui n'est pas formalisé n'est pas inexistant, il est juste à aller chercher.",
   },
   {
     question: "Combien de temps avant de voir des résultats ?",
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "Et si ça ne fonctionne pas pour moi ?",
     answer:
-      "Le diagnostic est gratuit et sans engagement. Vous repartez avec un document précis sur ce qui bloque votre conversion, que vous décidiez de poursuivre ou non. Si vous choisissez la transformation complète et que le résultat ne vous satisfait pas, une révision est incluse dans les 7 jours suivant la livraison. Vous n'achetez pas de l'abstrait — vous achetez un livrable concret.",
+      "Le diagnostic est gratuit et sans engagement. Vous repartez avec un document précis sur ce qui bloque votre conversion, que vous décidiez de poursuivre ou non. Si vous choisissez la transformation complète et que le résultat ne vous satisfait pas, une révision est incluse dans les 7 jours suivant la livraison. Vous n'achetez pas de l'abstrait, vous achetez un livrable concret.",
   },
 ];
 

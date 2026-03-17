@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Clarity",
   },
   description:
-    "Votre offre est solide. Vos prospects partent quand même. Clarity transforme votre landing page B2B en source de leads qualifiés — en 5 jours ouvrés via la Method ELEVATE.",
+    "Votre offre est solide. Vos prospects partent quand même. Clarity transforme votre landing page B2B en source de leads qualifiés, en 5 jours ouvrés via la Method ELEVATE.",
   openGraph: {
     title: "Clarity — Transformez votre landing page B2B en machine à leads",
     description:
